@@ -3,3 +3,12 @@
 # confuse it with the software requirements, which may be listed in
 # docs/requirements.rst
 numpy
+SimpleITK
+vtk
+meshio
+scikit-surgeryvtk
+scikit-surgerycore
+scikit-image
+slicerio
+nrrd
+tdqm
