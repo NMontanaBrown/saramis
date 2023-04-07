@@ -12,3 +12,4 @@ scikit-image
 slicerio
 nrrd
 tdqm
+pymeshlab
