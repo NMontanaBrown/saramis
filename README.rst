@@ -23,18 +23,10 @@ SARAMIS
 
 Author: Nina Montana Brown
 
-SARAMIS is part of the `SciKit-Surgery`_ software project, developed at the `Wellcome EPSRC Centre for Interventional and Surgical Sciences`_, part of `University College London (UCL)`_.
+SARAMIS is developed at the `Wellcome EPSRC Centre for Interventional and Surgical Sciences`_, part of `University College London (UCL)`_.
 
-SARAMIS is tested on Python 3.7 but should support other modern Python versions.
+SARAMIS is tested on Python 3.9 but should support other modern Python versions.
 
-SARAMIS is currently a demo project, which will add/multiply two numbers. Example usage:
-
-::
-
-    python saramis.py 5 8
-    python saramis.py 3 6 --multiply
-
-Please explore the project structure, and implement your own functionality.
 
 Developing
 ----------
@@ -80,6 +72,9 @@ You can pip install directly from the repository as follows:
 
 
 
+Using SARAMIS and it's functionalities will require the compilation of some libraries locally, or the use of a Docker image.
+For more information, see the 'docs/install' folder.
+
 Contributing
 ^^^^^^^^^^^^
 
@@ -109,7 +104,6 @@ Supported by `Wellcome`_ and `EPSRC`_.
 .. _`Wellcome EPSRC Centre for Interventional and Surgical Sciences`: http://www.ucl.ac.uk/weiss
 .. _`source code repository`: https://github.com/NMontanaBrown/saramis
 .. _`Documentation`: https://saramis.readthedocs.io
-.. _`SciKit-Surgery`: https://github.com/SciKit-Surgery
 .. _`University College London (UCL)`: http://www.ucl.ac.uk/
 .. _`Wellcome`: https://wellcome.ac.uk/
 .. _`EPSRC`: https://www.epsrc.ac.uk/
