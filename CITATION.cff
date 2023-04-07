@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use any of this package in your research, please cite it as below."
+authors:
+- family-names: "Montana-Brown"
+  given-names: "Nina"
+  orcid: ""
+title: "SARAMIS"
+url: "https://github.com/NMontanaBrown/saramis"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Montana Brown"
+    given-names: "Nina"
+    orcid: "https://orcid.org/0000-0001-7286-1326"
+  doi: TBC
+  journal: TBC
+  start: TBC
+  end: TBC
+  title: TBC
+  volume: TBC
+  issue: TBC
+  year: TBC

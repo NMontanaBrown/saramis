@@ -1,0 +1,5 @@
+# This file lists the python packages that your software depends on.
+# It is used by tox to manage software dependencies. Don't
+# confuse it with the software requirements, which may be listed in
+# docs/requirements.rst
+numpy

@@ -1,0 +1,2 @@
+include versioneer.py
+include saramis/_version.py

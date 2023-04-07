@@ -1,0 +1,146 @@
+#Tell Gitlab to load these environental vars from the variables list
+variables:
+  PYPI_USER: SECURE
+  PYPI_PASS: SECURE
+
+stages:
+  - build
+  - installer
+  - test
+  - deploy
+
+# Define a template stage with common settings
+# that can be extended by specific stages.
+# The except block will skip this stage if the commit
+# message contains [skip build]
+.build-skip-template: &build-skip-template
+  stage: build
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /\[skip[ _-]build?\]/i
+
+.build-install-template: &build-install-template
+  script:
+    - tox -e installer
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+# The win/mac/linux build stages inherit settings
+# from build-install-template
+build linux installer:
+  <<: *build-skip-template
+  <<: *build-install-template
+  tags:
+    - shared-linux
+
+build mac installer:
+  <<: *build-skip-template
+  <<: *build-install-template
+  tags:
+    - shared-mac
+
+build windows installer:
+  <<: *build-skip-template
+  <<: *build-install-template
+  tags:
+    - shared-win
+
+build docs:
+  <<: *build-skip-template
+  script:
+    - tox -e docs
+  tags:
+    - shared-linux
+  artifacts:
+    paths:
+      - doc/
+    expire_in: 1 week
+
+test Linux:
+  stage: test
+  script:
+    - tox
+  tags:
+    - shared-linux
+  coverage: '/^TOTAL.*\s+(\d+\%)$/'
+
+test macOS:
+  stage: test
+  script:
+    - tox
+  tags:
+    - shared-mac
+
+test Windows:
+  stage: test
+  script:
+    - tox
+  tags:
+    - shared-win
+
+# Template for deploy stages that depend on 'build docs'
+# if the build stage is skipped, skip these also
+.deploy-docs-skip-template: &deploy-docs-skip-template
+  stage: deploy
+  when: manual
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /\[skip[ _-]build?\]/i
+  dependencies:
+    - build docs
+
+deploy docs to staging:
+  <<: *deploy-docs-skip-template
+  script:
+    # Note: the group/username directory must already exist on the server before calling this command
+    - rsync -avz -e'ssh -v' --numeric-ids --delete doc/build/html/* staging_docs_rsync:NMontanaBrown/saramis 2>&1
+  tags:
+    - docs-staging
+  environment:
+    name: staging
+    url: http://weisslab-lin.cs.ucl.ac.uk/staging/NMontanaBrown/saramis
+  only:
+    - master
+
+deploy docs to production:
+  <<: *deploy-docs-skip-template
+  script:
+    # Note: the group/username directory must already exist on the server before calling this command
+    - rsync -avz -e'ssh -v' --numeric-ids --delete doc/build/html/* production_docs_rsync:NMontanaBrown/saramis 2>&1
+  tags:
+    - docs-production
+  environment:
+    name: production
+  only:
+    - public
+
+deploy pip to PyPI:
+  stage: deploy
+  when: manual
+  only:
+    - tags
+
+  environment:
+    name: PyPI
+    url: https://pypi.python.org/pypi/saramis
+
+  tags:
+    - pip-production
+
+  artifacts:
+    paths:
+      - dist/
+
+  script:
+    # Install packages required to build/publish
+    # remove any previous distribution files
+    - pip install wheel twine setuptools
+    - rm -rf dist
+
+    # bundle installer
+    - python setup.py bdist_wheel
+
+    # Upload to pypi
+    - twine upload --repository pypi dist/* --username $PYPI_USER --password $PYPI_PASS

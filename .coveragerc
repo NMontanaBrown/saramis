@@ -1,0 +1,6 @@
+[run]
+omit = 
+        ./saramis/_version.py
+        ./saramis/__init__.py
+        ./saramis/__main__.py
+        ./saramis/ui/saramis_command_line.py
