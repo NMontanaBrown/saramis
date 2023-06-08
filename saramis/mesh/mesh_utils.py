@@ -107,7 +107,7 @@ def center_model(path_vtk:str,
         path_save = os.path.splitext(path_vtk)[0]+"_normalised.vtk"
 
     # Extract centroid and model.
-    model = sm.VTKSurfaceModel(path_vtk)
+    model = sm.VTKSurfaceModel(path_vtk, [1.0, 1.0, 1.0])
     trans = vtk.vtkMatrix4x4()
     trans.Identity()
     if center_vector is None:
@@ -126,10 +126,22 @@ def center_model(path_vtk:str,
     model.set_model_transform(trans)
 
     # Save
-    writer = vtk.vtkPolyDataWriter()
+    writer = vtk.vtkPLYWriter()
     writer.SetFileName(path_save)
     writer.SetInputConnection(model.transform_filter.GetOutputPort())
     writer.Write()
+
+def get_model_center(path_ply):
+    """
+    """
+    model = sm.VTKSurfaceModel(path_ply, [1.0, 1.0, 1.0])
+    trans = vtk.vtkMatrix4x4()
+    trans.Identity()
+    bounding_box = model.actor.GetBounds()
+    l_x = (bounding_box[1] + bounding_box[0]) / 2.0
+    l_y = (bounding_box[3] + bounding_box[2]) / 2.0
+    l_z = (bounding_box[5] + bounding_box[4]) / 2.0
+    return [l_x, l_y, l_z]
 
 def get_model_vertices_faces_normals(path_ply):
     """
@@ -141,7 +153,7 @@ def get_model_vertices_faces_normals(path_ply):
              faces, np.Array, [M, 3]
              normals, np.Array, [N, 3]
     """
-    reader = vtk.vtkOBJReader()
+    reader = vtk.vtkPLYReader()
     reader.SetFileName(path_ply)
     reader.Update()
     polydata = reader.GetOutput()

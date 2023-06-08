@@ -139,14 +139,15 @@ def format_labels(input_filename,
     """
     Function that takes a .seg.nrrd file
     that has been edited, and formats to a
-    single label.
+    single label, conditional on the segment names defined in
+    segment_names_to_labels
     :param input_filename: str, path in
     :param output_filename: str, path out
     :param segment_names_to_labels: List[str]
     :param filter_value: int, max size of disconnected islands
                          to filter out of the segmentation.
     """
-
+    # convert the segment_names into a list of tuples for saving into a file.
     segment_names_tuples = [(name, i+1) for i, name in enumerate(segment_names_to_labels)]
 
     # Read voxels and metadata from a .seg.nrrd file
@@ -187,16 +188,32 @@ def format_labels(input_filename,
 def get_skeleton(input_filename,
                  output_filename):
     """
-    Skeletonise a .nrrd file.
+    Skeletonise a .nrrd or nii file.
     :param input_filename: str, path in
     :param output_filename: str, path out.
     """
-    # Read voxels and metadata from a .nrrd file
-    voxels, header = nrrd.read(input_filename)
+    import nrrd
+    import nibabel as nib
+    import matplotlib.pyplot as plt
+    # if file ending of input_filename is .nii, read as .nii file
+    if os.path.splitext(input_filename)[1] == ".gz":
+        voxels_file = nib.load(input_filename)
+        voxels = voxels_file.get_fdata()
+    else:
+        voxels, header = nrrd.read(input_filename)
     # Skeletonise voxels
+    voxels = skimage.morphology.binary_closing(voxels)
+    voxels = skimage.morphology.binary_closing(voxels)
+    voxels = skimage.morphology.binary_closing(voxels)
     skeleton_voxels = skimage.morphology.skeletonize_3d(voxels)
+    # plot in 3d
+    # np.savetxt(output_filename.replace(".nrrd", ".txt"), spline_points.T, delimiter=',')
     skimage.morphology.binary_dilation(skeleton_voxels, footprint=None, out=None)
     skimage.morphology.binary_dilation(skeleton_voxels, footprint=None, out=None)
     skimage.morphology.binary_dilation(skeleton_voxels, footprint=None, out=None)
     # Write skeleton voxels and metadata to .nii file
-    nrrd.write(output_filename, 255*skeleton_voxels, header)
+    if os.path.splitext(input_filename)[1] == ".gz":
+        new_image = nib.Nifti1Image(255*skeleton_voxels, affine=voxels_file.affine, header=voxels_file.header)
+        nib.save(new_image, output_filename.replace(".nrrd", ".nii.gz"))
+    else:
+        nrrd.write(output_filename, 255*skeleton_voxels)
