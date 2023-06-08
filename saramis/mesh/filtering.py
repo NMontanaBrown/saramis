@@ -244,6 +244,30 @@ def get_segment_names_tuples():
     segment_names_tuples = [(name, i+1) for i, name in enumerate(segment_names_to_labels)]
     return segment_names_to_labels, segment_names_tuples
 
+def get_hollow_segments():
+    hollow_segments = [
+                        "stomach",
+                        "aorta",
+                        "inferior_vena_cava",
+                        "portal_vein_and_splenic_vein",
+                        "esophagus",
+                        "trachea",
+                        "heart_myocardium",
+                        "heart_atrium_left",
+                        "heart_ventricle_left",
+                        "heart_atrium_right",
+                        "heart_ventricle_right",
+                        "pulmonary_artery",
+                        "iliac_artery_left",
+                        "iliac_artery_right",
+                        "iliac_vena_left",
+                        "iliac_vena_right",
+                        "small_bowel",
+                        "duodenum",
+                        "colon",
+                        "urinary_bladder"
+    ]
+    return hollow_segments
 
 def format_labels(input_filename,
                   output_filename,
