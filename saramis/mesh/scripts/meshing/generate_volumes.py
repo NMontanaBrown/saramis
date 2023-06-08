@@ -65,7 +65,7 @@ for folder in tqdm.tqdm(total_folders):
             return None
         # if os.path.exists(path_ply.replace(".ply", "_.msh")):
         #     return None
-        subprocess.run([path_ftetwild, "-i", path_ply, "--is-quiet"])
+        subprocess.run([path_ftetwild, "-i", path_ply, "--is-quiet",  "-o", path_ply.replace(".ply", "_.msh")])
         subprocess.run(["gmsh", path_ply.replace(".ply", "_.msh"), "-1", "-0", path_ply.replace(".ply", ".vtk"), "-2"])
 
     pool = multiprocessing.Pool(processes=8)
