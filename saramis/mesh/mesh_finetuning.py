@@ -77,3 +77,26 @@ def mesh_decimation(path_mesh:str,
         # replace with .ply and
         path_save = os.path.splitext(path_mesh)[0] + "_mesh_decimation.ply"
     mesh_orig.save_current_mesh(path_save)
+
+def hollow_mesh(path_mesh:str,
+                smooth:bool=False,
+                percent_hollow:int=49,
+                path_save:str=None):
+    """
+    Function that hollows a mesh out to a shell.
+    :param path_mesh: str, path to mesh.
+    :param smooth: bool, whether or not to smooth the original mesh.
+    :param percent_hollow: int, percentage of hollowing.
+    """
+    mesh_orig = pmesh.MeshSet()
+    mesh_orig.load_new_mesh(path_mesh)
+    if smooth:
+        mesh_orig.apply_coord_laplacian_smoothing(stepsmoothnum=24,
+                                                boundary=False,
+                                                cotangentweight=False,
+                                                selected=False)
+    mesh_orig.generate_resampled_uniform_mesh(offset=pmesh.Percentage(percent_hollow))
+    mesh_orig.meshing_invert_face_orientation()
+    mesh_orig.generate_by_merging_visible_meshes(mergevisible=False,
+                                                 deletelayer=True,)
+    mesh_orig.save_current_mesh(os.path.splitext(path_mesh)[0]+"_hollow.ply")
