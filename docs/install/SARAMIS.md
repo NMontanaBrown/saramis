@@ -2,6 +2,7 @@
 
 We describe dependencies to replicate and use SARAMIS.
 In future, we will aim to provide a Docker image to simplify this process.
+We have tested the following instructions on Ubuntu 22.04.
 
 ## Registration: CUDA Coherent Point Drift
 
@@ -62,3 +63,11 @@ docker build -f docker/Blender.Dockerfile -t kubricdockerhub/blender:latest .  #
 python setup.py bdist_wheel
 docker build -f docker/Kubruntu.Dockerfile -t kubricdockerhub/kubruntu:latest .  # then build a kubric image of which base image is the blender image above
 ```
+
+## Other software requirements
+
+We use the following software:
+- [Blender](https://www.blender.org/) (tested with 3.4.1)
+- [3DSlicer](https://download.slicer.org/) (tested with 5.2.2)
+- [MeshLab](https://www.meshlab.net/) (tested with 2020.09)
+- [ParaView](https://www.paraview.org/) (tested with 5.11.0)
