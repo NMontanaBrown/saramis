@@ -1,0 +1,76 @@
+<scene version="2.1.0">
+
+
+
+	<default name="spp" value="128" />
+	<default name="resx" value="200" />
+	<default name="resy" value="100" />
+
+
+
+	<integrator type="path">
+		<integer name="max_depth" value="12" />
+	</integrator>
+	<sensor type="perspective">
+		<string name="fov_axis" value="x" />
+		<float name="fov" value="80" />
+		<float name="principal_point_offset_x" value="0.000000" />
+		<float name="principal_point_offset_y" value="-0.000000" />
+		<float name="near_clip" value="0.100000" />
+		<float name="far_clip" value="1000.000000" />
+		
+		<transform name="to_world">
+			<matrix value="-0.253572964485383 0.9303509456229309 0.2648544310760399 .303052 -0.8345504915639033 -0.07196535549621447 -0.5462110074309661 .190867 -0.48910758398591814 -0.35953874003620473 0.7946733075299788 .292152 0.000000 0.000000 0.000000 1.000000" />
+		</transform>
+		<sampler type="independent">
+			<integer name="sample_count" value="$spp" />
+		</sampler>
+		<film type="hdrfilm">
+			<integer name="width" value="$resx" />
+			<integer name="height" value="$resy" />
+		</film>
+	</sensor>
+
+	
+	<bsdf type="normalmap" id="map">
+		<texture name="normalmap" type="bitmap">
+			<boolean name="raw" value="true" />
+			<string name="filename" value="/home/s-sd/Desktop/localisation_3d_rl_env/all_data/Shaheer_Data/Data/s0639/colon/colon/bake_map_normals.png" />
+		</texture>
+
+		<bsdf type="twosided">
+			<bsdf type="principled">
+				<texture type="bitmap" name="base_color">
+					<string name="filename" value="/home/s-sd/Desktop/localisation_3d_rl_env/all_data/Shaheer_Data/Data/s0639/colon/colon/bake_map_diffuse.png" />
+				</texture>
+				
+				<float name="metallic" value="0" />
+				<float name="specular" value="0.1" />
+				<float name="roughness" value="0" />
+				<float name="spec_tint" value="0" />
+				<float name="anisotropic" value="0" />
+				<float name="sheen" value="0" />
+				<float name="sheen_tint" value="0" />
+				<float name="clearcoat" value="0" />
+				<float name="clearcoat_gloss" value="0" />
+				<float name="spec_trans" value="0" />
+			</bsdf>
+		</bsdf>
+	</bsdf>
+
+	
+	<emitter type="spot">
+		<transform name="to_world">
+				<matrix value="-0.253572964485383 0.9303509456229309 0.2648544310760399 .303052 -0.8345504915639033 -0.07196535549621447 -0.5462110074309661 .190867 -0.48910758398591814 -0.35953874003620473 0.7946733075299788 .292152 0.000000 0.000000 0.000000 1.000000" />
+			</transform>
+		<rgb name="intensity" value="10000.0" />
+		<float name="cutoff_angle" value="1400" />
+	</emitter>
+	
+
+	<shape type="ply">
+		<string name="filename" value="/home/s-sd/Desktop/localisation_3d_rl_env/all_data/Shaheer_Data/Data/s0639/colon/colon/interp_curve.ply" />
+		<ref id="map" name="bsdf" />
+		<boolean name="flip_normals" value="false" />
+	</shape>
+</scene>
