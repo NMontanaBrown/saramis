@@ -98,7 +98,7 @@ class NavigationEnvironment(gym.Env):
         self.structure_to_pick = np.random.randint(len(structures))
         structure_to_load = structures[self.structure_to_pick]
         
-        structure_indices_path = os.path.join(data_path, f'indices_template_int_{structure_to_load}.txt')
+        structure_indices_path = os.path.join(data_path, f'indices_final_mesh_int_{structure_to_load}.txt')
         structure_indices = np.loadtxt(structure_indices_path, dtype=np.int64, converters=float)
         self.structure_vertices = mesh_vertices[structure_indices]
         
