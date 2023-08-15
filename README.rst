@@ -1,31 +1,10 @@
-SARAMIS
+SARAMIS: Simulation Assets for Robotic-Assisted and Minimally Invasive Surgery
 ===============================
-
-.. image:: https://github.com/NMontanaBrown/saramis/raw/master/project-icon.png
-   :height: 128px
-   :width: 128px
-   :target: https://github.com/NMontanaBrown/saramis
-   :alt: Logo
-
-.. image:: https://github.com/NMontanaBrown/saramis/badges/master/build.svg
-   :target: https://github.com/NMontanaBrown/saramis/pipelines
-   :alt: GitLab-CI test status
-
-.. image:: https://github.com/NMontanaBrown/saramis/badges/master/coverage.svg
-    :target: https://github.com/NMontanaBrown/saramis/commits/master
-    :alt: Test coverage
-
-.. image:: https://readthedocs.org/projects/saramis/badge/?version=latest
-    :target: http://saramis.readthedocs.io/en/latest/?badge=latest
-    :alt: Documentation Status
-
 
 
 Author: Nina Montana Brown
 
 SARAMIS is developed at the `Wellcome EPSRC Centre for Interventional and Surgical Sciences`_, part of `University College London (UCL)`_.
-
-SARAMIS is tested on Python 3.9 but should support other modern Python versions.
 
 
 Developing
@@ -39,26 +18,6 @@ You can clone the repository using the following command:
 ::
 
     git clone https://github.com/NMontanaBrown/saramis
-
-
-Running tests
-^^^^^^^^^^^^^
-Pytest is used for running unit tests:
-::
-
-    pip install pytest
-    python -m pytest
-
-
-Linting
-^^^^^^^
-
-This code conforms to the PEP8 standard. Pylint can be used to analyse the code:
-
-::
-
-    pip install pylint
-    pylint --rcfile=tests/pylintrc saramis
 
 
 Installing
@@ -92,7 +51,8 @@ Licensing and copyright
 -----------------------
 
 Copyright 2023 University College London.
-SARAMIS is released under the BSD-3 license. Please see the `license file`_ for details.
+SARAMIS code is released under the BSD-3 license. Please see the `license file`_ for details.
+SARAMIS data is released under CC-BY-NC-SA license. Please see the paper and Supplementary Materials for full details.
 
 
 Acknowledgements
