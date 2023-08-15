@@ -6,6 +6,10 @@ Author: Nina Montana Brown
 
 SARAMIS is developed at the `Wellcome EPSRC Centre for Interventional and Surgical Sciences`_, part of `University College London (UCL)`_.
 
+Data
+----------
+
+SARAMIS data may be provisionally downloaded at the following link: https://saramis.s3.eu-north-1.amazonaws.com/
 
 Developing
 ----------
