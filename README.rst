@@ -1,7 +1,7 @@
 SARAMIS: Simulation Assets for Robotic-Assisted and Minimally Invasive Surgery
 ===============================
 
-
+.. image:: /docs/static/main_fig.png
 Author: Nina Montana Brown
 
 SARAMIS is developed at the `Wellcome EPSRC Centre for Interventional and Surgical Sciences`_, part of `University College London (UCL)`_.
