@@ -1,6 +1,6 @@
 # Running RL Experiments
 
-## Installation
+## Installation
 
 As outlined in `./docs/install/SARAMIS.md`, create an enviroment for navigation.
 
@@ -9,7 +9,7 @@ conda env create -n saramis_rl_env_nav --f saramis_rl_env_nav.yml
 conda activate saramis_rl_env_nav
 ```
 
-# Training
+## Training
 
 From the activated environment, change the paths to /rl_expt folder provided, where the colon.xml file is at `./saramis/saramis/nav_rl/colon.xml`, and save_path points to a folder to save models during training. Then, run the following command:
 
@@ -17,7 +17,7 @@ From the activated environment, change the paths to /rl_expt folder provided, wh
 python ./saramis/nav_rl/train.py
 ```
 
-# Eval - Target Navigation
+## Eval - Target Navigation
 
 We provide a script to evaluate the trained agent on unseen test data.
 
@@ -26,7 +26,7 @@ python ./saramis/nav_rl/eval.py
 ```
 
 
-# Eval - Human Evaluation
+## Eval - Human Evaluation
 
 We provide a script to evaluate the performance of a human. This script can be run in a Spyder IDE such that the live renders are visualised step by step. Further instructions are provided under `./saramis/nav_rl/human_eval_instructions.txt`.
 
