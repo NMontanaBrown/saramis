@@ -6,6 +6,7 @@ Author: Nina Montana Brown
 
 SARAMIS is developed at the `Wellcome EPSRC Centre for Interventional and Surgical Sciences`_, part of `University College London (UCL)`_.
 
+
 Data
 ----------
 
@@ -17,6 +18,14 @@ SARAMIS data may be provisionally downloaded at the following links:
 * https://saramis.s3.eu-north-1.amazonaws.com/metadata.tar.gz
 * https://saramis.s3.eu-north-1.amazonaws.com/rl_expt.tar.gz
 
+
+Reproducing SARAMIS
+----------
+
+* Labelling and Analysis: full instructions to run the labelling, meshing, tetrahedralisation, texturing, and analysis of the SARAMIS dataset are included at the
+`labelling instructions`_ portion of the docs.
+
+* RL Experiment: full instructions to run the training of a navigation agent are included in the `RL experiment`_ section of the docs.
 
 Developing
 ----------
@@ -51,13 +60,6 @@ Contributing
 Please see the `contributing guidelines`_.
 
 
-Useful links
-^^^^^^^^^^^^
-
-* `Source code repository`_
-* `Documentation`_
-
-
 Licensing and copyright
 -----------------------
 
@@ -74,7 +76,8 @@ Supported by `Wellcome`_ and `EPSRC`_.
 
 .. _`Wellcome EPSRC Centre for Interventional and Surgical Sciences`: http://www.ucl.ac.uk/weiss
 .. _`source code repository`: https://github.com/NMontanaBrown/saramis
-.. _`Documentation`: https://saramis.readthedocs.io
+.. _`RL experiment`: https://github.com/NMontanaBrown/saramis/docs/RL
+.. _`labelling instructions`: https://github.com/NMontanaBrown/saramis/docs/labelling
 .. _`University College London (UCL)`: http://www.ucl.ac.uk/
 .. _`Wellcome`: https://wellcome.ac.uk/
 .. _`EPSRC`: https://www.epsrc.ac.uk/
