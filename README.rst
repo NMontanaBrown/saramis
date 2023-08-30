@@ -18,6 +18,19 @@ SARAMIS data may be downloaded at the following links:
 * https://saramis.s3.eu-north-1.amazonaws.com/metadata.tar.gz
 * https://saramis.s3.eu-north-1.amazonaws.com/rl_expt.tar.gz
 
+Installing
+----------
+
+
+Using SARAMIS and it's functionalities will require the compilation of some libraries locally, installation of open-sources software, or the use of a Docker image.
+For more information, see the `Install`_ folder.
+
+You can pip install the code from the repository as follows:
+
+::
+
+    pip install git+https://github.com/NMontanaBrown/saramis
+
 
 Usage Of SARAMIS
 ----------
@@ -25,6 +38,7 @@ Usage Of SARAMIS
 * `Labelling`_: full instructions to run the labelling, meshing, tetrahedralisation, and texturing of the SARAMIS dataset are included at the `Labelling`_ portion of the docs.
 
 * `RL Experiment`_: full instructions to run the training of a navigation agent are included in the `RL experiment`_ section of the docs.
+
 
 Developing
 ----------
@@ -37,21 +51,6 @@ You can clone the repository using the following command:
 ::
 
     git clone https://github.com/NMontanaBrown/saramis
-
-
-Installing
-----------
-
-
-Using SARAMIS and it's functionalities will require the compilation of some libraries locally, or the use of a Docker image.
-For more information, see the `Install`_ folder.
-
-You can pip install the code from the repository as follows:
-
-::
-
-    pip install git+https://github.com/NMontanaBrown/saramis
-
 
 
 
