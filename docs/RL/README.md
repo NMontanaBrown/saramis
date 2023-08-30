@@ -2,7 +2,7 @@
 
 ## Installation
 
-As outlined in `./docs/install/SARAMIS.md`, create an enviroment for navigation.
+As outlined in `/docs/install/SARAMIS.md`, create an enviroment for navigation.
 
 ```bash
 conda env create -n saramis_rl_env_nav --f saramis_rl_env_nav.yml
