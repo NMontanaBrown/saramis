@@ -22,7 +22,7 @@ Installing
 ----------
 
 
-Using SARAMIS and it's functionalities will require the compilation of some libraries locally, installation of open-sources software, or the use of a Docker image.
+Using SARAMIS and it's functionalities will require the compilation of some libraries locally, installation of open-source software, or the use of a Docker image.
 For more information, see the `Install`_ folder.
 
 You can pip install the code from the repository as follows:
