@@ -19,12 +19,12 @@ SARAMIS data may be provisionally downloaded at the following links:
 * https://saramis.s3.eu-north-1.amazonaws.com/rl_expt.tar.gz
 
 
-Reproducing SARAMIS
+Usage Of SARAMIS
 ----------
 
-* Labelling and Analysis: full instructions to run the labelling, meshing, tetrahedralisation, texturing, and analysis of the SARAMIS dataset are included at the `labelling instructions`_ portion of the docs.
+* `Labelling`_: full instructions to run the labelling, meshing, tetrahedralisation, and texturing of the SARAMIS dataset are included at the `Labelling`_ portion of the docs.
 
-* RL Experiment: full instructions to run the training of a navigation agent are included in the `RL experiment`_ section of the docs.
+* `RL Experiment`_: full instructions to run the training of a navigation agent are included in the `RL experiment`_ section of the docs.
 
 Developing
 ----------
@@ -42,7 +42,11 @@ You can clone the repository using the following command:
 Installing
 ----------
 
-You can pip install directly from the repository as follows:
+
+Using SARAMIS and it's functionalities will require the compilation of some libraries locally, or the use of a Docker image.
+For more information, see the `Install`_ folder.
+
+You can pip install the code from the repository as follows:
 
 ::
 
@@ -50,8 +54,6 @@ You can pip install directly from the repository as follows:
 
 
 
-Using SARAMIS and it's functionalities will require the compilation of some libraries locally, or the use of a Docker image.
-For more information, see the 'docs/install' folder.
 
 Contributing
 ^^^^^^^^^^^^
@@ -75,8 +77,9 @@ Supported by `Wellcome`_ and `EPSRC`_.
 
 .. _`Wellcome EPSRC Centre for Interventional and Surgical Sciences`: http://www.ucl.ac.uk/weiss
 .. _`source code repository`: https://github.com/NMontanaBrown/saramis
-.. _`RL experiment`: https://github.com/NMontanaBrown/saramis/blob/main/docs/RL/README.md
-.. _`labelling instructions`: https://github.com/NMontanaBrown/saramis/blob/main/docs/labelling/README.md
+.. _`RL Experiment`: https://github.com/NMontanaBrown/saramis/blob/main/docs/RL/README.md
+.. _`Labelling`: https://github.com/NMontanaBrown/saramis/blob/main/docs/labelling/README.md
+.. _`Install`: https://github.com/NMontanaBrown/saramis/blob/main/docs/install/SARAMIS.md
 .. _`University College London (UCL)`: http://www.ucl.ac.uk/
 .. _`Wellcome`: https://wellcome.ac.uk/
 .. _`EPSRC`: https://www.epsrc.ac.uk/
