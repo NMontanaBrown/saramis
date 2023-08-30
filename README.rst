@@ -75,7 +75,7 @@ Supported by `Wellcome`_ and `EPSRC`_.
 
 .. _`Wellcome EPSRC Centre for Interventional and Surgical Sciences`: http://www.ucl.ac.uk/weiss
 .. _`source code repository`: https://github.com/NMontanaBrown/saramis
-.. _`RL experiment`: https://github.com/NMontanaBrown/saramis/docs/RL
+.. _`RL experiment`: https://github.com/NMontanaBrown/saramis/blob/main/docs/RL/README.md
 .. _`labelling instructions`: https://github.com/NMontanaBrown/saramis/blob/main/docs/labelling/README.md
 .. _`University College London (UCL)`: http://www.ucl.ac.uk/
 .. _`Wellcome`: https://wellcome.ac.uk/
