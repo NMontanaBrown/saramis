@@ -2,7 +2,8 @@
 
 ## Installation
 
-The reproduction of the pipeline involves the creation of a new conda environment following `./docs/install/SARAMIS.md`
+The reproduction of the pipeline involves the installation of several pieces of software, as well as the creation of a new conda environment to run scripts included in the SARAMIS repository.
+We point readers to `./docs/install/SARAMIS.md` to obtain the full stack of open-source software required, as well as how to create the conda environment.
 
 Furthermore, the TotalSegmentator package must be installed: 
 
