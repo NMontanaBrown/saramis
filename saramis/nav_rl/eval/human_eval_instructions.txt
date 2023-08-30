@@ -1,0 +1,16 @@
+To run human_eval.py:
+- the spyder IDE is needed
+- the interactive plotter in spyder must be enabled
+
+First run the top block in the script
+
+Then run the bottom block
+
+Then manually update case_num
+
+Finally run the bottom block again
+
+Repeat for all cases
+
+SUmmary stats will be printed on each run
+
