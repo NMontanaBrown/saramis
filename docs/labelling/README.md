@@ -1,6 +1,6 @@
 # Reproducing SARAMIS
 
-## Installation
+## Installation
 
 The reproduction of the pipeline involves the creation of a new conda environment following `./docs/install/SARAMIS.md`
 
@@ -36,7 +36,7 @@ python ./saramis/labelling/scripts/convert_slicer_segmentator.py
 - All the preliminary annotations derived from the AMOS and Abdomen-1k dataset were inspected by a team of 7 trained annotators and 4 radiologists. The full revision protocol is included in the Supplementary Material of the paper, and was performed manually using 3DSlicer.
 - Copies of labels prior and further to correction are included for further analysis.
 
-## Meshing and Tetrahedralisation
+## Meshing and Tetrahedralisation
 
 Once the review phase was concluded, the data was post-processed to obtain the meshes, textures, and tetrahedral volumes. This consisted of several steps.
 
