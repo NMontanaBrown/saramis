@@ -22,8 +22,7 @@ SARAMIS data may be provisionally downloaded at the following links:
 Reproducing SARAMIS
 ----------
 
-* Labelling and Analysis: full instructions to run the labelling, meshing, tetrahedralisation, texturing, and analysis of the SARAMIS dataset are included at the
-`labelling instructions`_ portion of the docs.
+* Labelling and Analysis: full instructions to run the labelling, meshing, tetrahedralisation, texturing, and analysis of the SARAMIS dataset are included at the `labelling instructions`_ portion of the docs.
 
 * RL Experiment: full instructions to run the training of a navigation agent are included in the `RL experiment`_ section of the docs.
 
