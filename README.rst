@@ -9,7 +9,14 @@ SARAMIS is developed at the `Wellcome EPSRC Centre for Interventional and Surgic
 Data
 ----------
 
-SARAMIS data may be provisionally downloaded at the following link: https://saramis.s3.eu-north-1.amazonaws.com/
+SARAMIS data may be provisionally downloaded at the following links:
+
+* https://saramis.s3.eu-north-1.amazonaws.com/abdomen.tar.gz
+* https://saramis.s3.eu-north-1.amazonaws.com/amos.tar.gz
+* https://saramis.s3.eu-north-1.amazonaws.com/total.tar.gz
+* https://saramis.s3.eu-north-1.amazonaws.com/metadata.tar.gz
+* https://saramis.s3.eu-north-1.amazonaws.com/rl_expt.tar.gz
+
 
 Developing
 ----------
