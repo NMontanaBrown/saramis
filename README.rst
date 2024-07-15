@@ -12,11 +12,11 @@ Downloading the Data
 
 SARAMIS data may be downloaded at the following links:
 
-* https://saramis.s3.eu-north-1.amazonaws.com/abdomen.tar.gz
-* https://saramis.s3.eu-north-1.amazonaws.com/amos.tar.gz
-* https://saramis.s3.eu-north-1.amazonaws.com/total.tar.gz
-* https://saramis.s3.eu-north-1.amazonaws.com/metadata.tar.gz
-* https://saramis.s3.eu-north-1.amazonaws.com/rl_expt.tar.gz
+* https://huggingface.co/datasets/NMontanaBrown/saramis_abdomen/tree/main
+* https://huggingface.co/datasets/NMontanaBrown/saramis_amos/tree/main
+* https://huggingface.co/datasets/NMontanaBrown/saramis_total/tree/main
+* https://huggingface.co/datasets/NMontanaBrown/saramis_metadata/tree/main
+* https://huggingface.co/datasets/NMontanaBrown/saramis_rl_expt/tree/main
 
 Installing
 ----------
